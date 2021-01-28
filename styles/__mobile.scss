@@ -1,0 +1,92 @@
+body {
+  background-image: url("../images/bg-pattern.svg");
+  padding: 2em 1em 0;
+  color: $grayishBlue;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+header {
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 45%;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  height: 25vh;
+  p {
+    text-align: center;
+    width: 60%;
+  }
+}
+.priceComponent {
+  background: $white;
+  display: grid;
+  grid-template: repeat(6, 1fr) / 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 0.75em 1em;
+  border-radius: 6px;
+  &__pageViews {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+    text-transform: uppercase;
+  }
+  &__inputRange {
+    width: 95%;
+    margin: 0 auto;
+    &::-moz-range-track {
+      appearance: none;
+      background: $lightGrayBlue;
+      height: 10px;
+      border-radius: 6px;
+    }
+    &::-moz-range-thumb {
+      background-image: url("../images/icon-slider.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $strongCyan;
+      border: none;
+      border-radius: 50%;
+      height: 48px;
+      width: 48px;
+    }
+    &::-moz-range-progress {
+      background: $softCyan;
+      border-radius: 6px;
+      height: 10px;
+    }
+  }
+  &__costCon {
+  }
+  &__cost {
+    display: inline-block;
+    color: black;
+  }
+  &__billing {
+    font-size: 0.85em;
+  }
+  &__toggle {
+  }
+  &__discount {
+  }
+  &__list {
+    list-style: url("../images/icon-check.svg");
+    font-size: 0.85em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  &__CTA {
+    justify-self: center;
+    background: $darkDesaturatedBlue;
+    color: $paleBlue;
+    font-size: 0.9em;
+    border-radius: 6em;
+    padding: 0.75em 4em;
+  }
+}

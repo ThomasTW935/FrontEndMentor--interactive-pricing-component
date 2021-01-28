@@ -2,6 +2,9 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 100vh;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -15,7 +18,7 @@ html {
 
 .attribution {
   position: absolute;
-  bottom: 1em;
+  bottom: 0;
   left: 0;
   right: 0;
   font-size: 11px;
@@ -24,5 +27,132 @@ html {
 
 .attribution a {
   color: #3e52a3;
+}
+
+body {
+  background-image: url("../images/bg-pattern.svg");
+  padding: 2em 1em 0;
+  color: #858fad;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+}
+
+header {
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 45%;
+  padding: 2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  height: 25vh;
+}
+
+header p {
+  text-align: center;
+  width: 60%;
+}
+
+.priceComponent {
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[6];
+  -ms-grid-columns: 1fr;
+      grid-template: repeat(6, 1fr)/1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 0.75em 1em;
+  border-radius: 6px;
+}
+
+.priceComponent__pageViews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.3em;
+  text-transform: uppercase;
+}
+
+.priceComponent__inputRange {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.priceComponent__inputRange::-moz-range-track {
+  -moz-appearance: none;
+       appearance: none;
+  background: #eaeefb;
+  height: 10px;
+  border-radius: 6px;
+}
+
+.priceComponent__inputRange::-moz-range-thumb {
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #10d5c2;
+  border: none;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.priceComponent__inputRange::-moz-range-progress {
+  background: #a5f3eb;
+  border-radius: 6px;
+  height: 10px;
+}
+
+.priceComponent__cost {
+  display: inline-block;
+  color: black;
+}
+
+.priceComponent__billing {
+  font-size: 0.85em;
+}
+
+.priceComponent__list {
+  list-style: url("../images/icon-check.svg");
+  font-size: 0.85em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5em;
+}
+
+.priceComponent__CTA {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background: #293356;
+  color: #bdccff;
+  font-size: 0.9em;
+  border-radius: 6em;
+  padding: 0.75em 4em;
 }
 /*# sourceMappingURL=styles.css.map */

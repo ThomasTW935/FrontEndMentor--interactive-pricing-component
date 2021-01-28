@@ -16,24 +16,27 @@
 <body>
 
   <header>
-    <h1>Simple, traffic-based pricing</h1>
+    <h2>Simple, traffic-based pricing</h2>
     <p>Sign-up for our 30-day trial. No credit card required.</p>
   </header>
 
-  <main>
-    <div>Pageviews</div>
-    <div><span>$</span> /month</div>
-    <div>
-      Monthly Billing
-      <input type="checkbox">
-      Yearly Billing <span>25% discount</span>
+  <main class='priceComponent'>
+    <div class='priceComponent__pageViews'><span class='priceComponent__views'></span><span>Pageviews</span></div>
+    <input class='priceComponent__inputRange' type="range" list='numbers' value='2' step='0' min='0' max='4'>
+    <div class='priceComponent__costCon'>
+      <h1 class='priceComponent__cost'>$</h1> /month
     </div>
-    <ul>
+    <div class='priceComponent__billing'>
+      Monthly Billing
+      <input type="checkbox" class='priceComponent__toggle'>
+      Yearly Billing <span class='priceComponent__discount'>25% discount</span>
+    </div>
+    <ul class='priceComponent__list'>
       <li>Unlimited websites</li>
       <li>100% data ownership</li>
       <li>Email reports</li>
     </ul>
-    <button type="button">Start my trial</button>
+    <button class='priceComponent__CTA' type="button">Start my trial</button>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

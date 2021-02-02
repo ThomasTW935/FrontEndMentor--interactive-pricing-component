@@ -24,13 +24,20 @@ header {
   }
 }
 .priceComponent {
-  background: $white;
-  display: grid;
-  grid-template: repeat(4, 1fr) 2fr 1fr / 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   text-align: center;
-  padding: 0.75em 1em;
-  border-radius: 6px;
+  & > section {
+    padding: 1.5em 1em;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vmin;
+    background: $white;
+  }
   &__pageViews {
     display: flex;
     justify-content: center;
@@ -72,17 +79,17 @@ header {
     font-size: 0.85em;
     display: flex;
     justify-content: center;
-    gap: 0.3em;
+    gap: 0.5em;
+    padding: 0.5em;
   }
   &__toggleContainer {
     position: relative;
     height: 2em;
     width: 3.5em;
-    &:hover .priceComponent__customToggle {
-      background: $strongCyan;
-    }
   }
   &__toggle {
+    opacity: 0;
+    pointer-events: none;
     &:checked ~ .priceComponent__customToggle {
       background: $strongCyan;
       &::before {
@@ -92,6 +99,7 @@ header {
   }
 
   &__customToggle {
+    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
@@ -133,18 +141,18 @@ header {
     font-size: 0.85em;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 3vmin;
     padding: 1.5em 0;
     position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -5%;
-      right: -5%;
-      bottom: 0;
-      border-top: 1px solid $grayishBlue;
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: -5%;
+    //   right: -5%;
+    //   bottom: 0;
+    //   border-top: 1px solid $grayishBlue;
+    // }
   }
   &__CTA {
     justify-self: center;

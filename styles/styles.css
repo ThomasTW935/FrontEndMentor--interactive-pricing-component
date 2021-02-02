@@ -31,6 +31,7 @@ html {
 
 body {
   background-image: url("../images/bg-pattern.svg");
+  background-color: #fafbff;
   padding: 2em 1em 0;
   color: #858fad;
   display: -webkit-box;
@@ -72,9 +73,9 @@ header p {
   background: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[6];
+  -ms-grid-rows: (1fr)[4] 2fr 1fr;
   -ms-grid-columns: 1fr;
-      grid-template: repeat(6, 1fr)/1fr;
+      grid-template: repeat(4, 1fr) 2fr 1fr/1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -131,6 +132,75 @@ header p {
 
 .priceComponent__billing {
   font-size: 0.85em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.3em;
+}
+
+.priceComponent__toggleContainer {
+  position: relative;
+  height: 2em;
+  width: 3.5em;
+}
+
+.priceComponent__toggleContainer:hover .priceComponent__customToggle {
+  background: #10d5c2;
+}
+
+.priceComponent__toggle:checked ~ .priceComponent__customToggle {
+  background: #10d5c2;
+}
+
+.priceComponent__toggle:checked ~ .priceComponent__customToggle::before {
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.priceComponent__customToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #cdd7ee;
+  border-radius: 1em;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.priceComponent__customToggle::before {
+  content: "";
+  position: absolute;
+  height: 1.4em;
+  width: 1.4em;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  border-radius: 100%;
+  background: white;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.priceComponent__discountMobile, .priceComponent__discountDesktop {
+  background: #fdd8ce;
+  color: #ff8c66;
+  padding: 0.25em 0.75em;
+  border-radius: 1em;
+  font-weight: 800;
+}
+
+.priceComponent__discountDesktop {
+  display: none;
+}
+
+.priceComponent__discountLabel {
+  display: none;
 }
 
 .priceComponent__list {
@@ -144,6 +214,18 @@ header p {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5em;
+  padding: 1.5em 0;
+  position: relative;
+}
+
+.priceComponent__list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  border-top: 1px solid #858fad;
 }
 
 .priceComponent__CTA {
@@ -154,5 +236,9 @@ header p {
   font-size: 0.9em;
   border-radius: 6em;
   padding: 0.75em 4em;
+}
+
+.priceComponent__CTA:hover {
+  color: White;
 }
 /*# sourceMappingURL=styles.css.map */

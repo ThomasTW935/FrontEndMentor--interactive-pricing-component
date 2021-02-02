@@ -1,5 +1,6 @@
 body {
   background-image: url("../images/bg-pattern.svg");
+  background-color: $veryPaleBlue;
   padding: 2em 1em 0;
   color: $grayishBlue;
   display: flex;
@@ -25,7 +26,7 @@ header {
 .priceComponent {
   background: $white;
   display: grid;
-  grid-template: repeat(6, 1fr) / 1fr;
+  grid-template: repeat(4, 1fr) 2fr 1fr / 1fr;
   align-items: center;
   text-align: center;
   padding: 0.75em 1em;
@@ -69,10 +70,63 @@ header {
   }
   &__billing {
     font-size: 0.85em;
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+  }
+  &__toggleContainer {
+    position: relative;
+    height: 2em;
+    width: 3.5em;
+    &:hover .priceComponent__customToggle {
+      background: $strongCyan;
+    }
   }
   &__toggle {
+    &:checked ~ .priceComponent__customToggle {
+      background: $strongCyan;
+      &::before {
+        transform: translate(0%, -50%);
+      }
+    }
   }
-  &__discount {
+
+  &__customToggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $lightGrayishBlue;
+    border-radius: 1em;
+    transition: 0.3s ease-in-out;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1.4em;
+      width: 1.4em;
+      left: 50%;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      border-radius: 100%;
+      background: white;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  &__discountMobile,
+  &__discountDesktop {
+    background: $lightGrayishRed;
+    color: $lightRed;
+    padding: 0.25em 0.75em;
+    border-radius: 1em;
+    font-weight: 800;
+  }
+  &__discountDesktop {
+    display: none;
+  }
+  &__discountLabel {
+    display: none;
   }
   &__list {
     list-style: url("../images/icon-check.svg");
@@ -80,6 +134,17 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    padding: 1.5em 0;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5%;
+      right: -5%;
+      bottom: 0;
+      border-top: 1px solid $grayishBlue;
+    }
   }
   &__CTA {
     justify-self: center;
@@ -88,5 +153,8 @@ header {
     font-size: 0.9em;
     border-radius: 6em;
     padding: 0.75em 4em;
+    &:hover {
+      color: White;
+    }
   }
 }

@@ -27,9 +27,14 @@
       <h1 class='priceComponent__cost'>$</h1> /month
     </div>
     <div class='priceComponent__billing'>
-      Monthly Billing
-      <input type="checkbox" class='priceComponent__toggle'>
-      Yearly Billing <span class='priceComponent__discount'>25% discount</span>
+      <p>Monthly Billing</p>
+      <label class='priceComponent__toggleContainer'>
+        <input type="checkbox" class='priceComponent__toggle'>
+        <span class='priceComponent__customToggle'></span>
+      </label>
+      <p>Yearly Billing</p>
+      <span class='priceComponent__discountMobile'>-25%</span>
+      <span class='priceComponent__discountDesktop'>25% discount</span>
     </div>
     <ul class='priceComponent__list'>
       <li>Unlimited websites</li>

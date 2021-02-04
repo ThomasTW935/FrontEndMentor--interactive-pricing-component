@@ -1,9 +1,9 @@
 let priceRange = [
-  { views: '10K', cost: 8 },
-  { views: '50K', cost: 12 },
-  { views: '100K', cost: 16 },
-  { views: '500k', cost: 24 },
-  { views: '1M', cost: 36 }
+  { views: '10K', cost: 8.00 },
+  { views: '50K', cost: 12.00 },
+  { views: '100K', cost: 16.00 },
+  { views: '500k', cost: 24.00 },
+  { views: '1M', cost: 36.00 }
 ]
 
 let views = document.querySelector('.priceComponent__views')
@@ -26,7 +26,7 @@ function inputRangeEvent() {
   })
 }
 function setInputRangeValue(index) {
-  cost.innerHTML = '$' + priceRange[index].cost
+  cost.innerHTML = '$' + priceRange[index].cost + `.00`
   views.innerHTML = priceRange[index].views
   inputRange.value = index
   setSessionStorage(index)

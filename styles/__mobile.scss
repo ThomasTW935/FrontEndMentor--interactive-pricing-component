@@ -5,7 +5,6 @@ body {
   color: $grayishBlue;
   display: flex;
   flex-direction: column;
-  gap: 1em;
 }
 header {
   background-image: url("../images/pattern-circles.svg");
@@ -31,12 +30,18 @@ header {
   & > section {
     padding: 1.5em 1em;
     border-radius: 6px;
+    gap: 4vmin;
+    background: $white;
+  }
+  &__pricing {
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+  }
+  &__features {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4vmin;
-    background: $white;
   }
   &__pageViews {
     display: flex;
@@ -47,6 +52,7 @@ header {
   &__inputRange {
     width: 95%;
     margin: 0 auto;
+    cursor: pointer;
     &::-moz-range-track {
       appearance: none;
       background: $lightGrayBlue;
@@ -69,8 +75,7 @@ header {
       height: 10px;
     }
   }
-  &__costCon {
-  }
+
   &__cost {
     display: inline-block;
     color: black;
@@ -108,6 +113,7 @@ header {
     background: $lightGrayishBlue;
     border-radius: 1em;
     transition: 0.3s ease-in-out;
+
     &::before {
       content: "";
       position: absolute;
@@ -144,15 +150,6 @@ header {
     gap: 3vmin;
     padding: 1.5em 0;
     position: relative;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: -5%;
-    //   right: -5%;
-    //   bottom: 0;
-    //   border-top: 1px solid $grayishBlue;
-    // }
   }
   &__CTA {
     justify-self: center;
@@ -161,6 +158,7 @@ header {
     font-size: 0.9em;
     border-radius: 6em;
     padding: 0.75em 4em;
+    cursor: pointer;
     &:hover {
       color: White;
     }
